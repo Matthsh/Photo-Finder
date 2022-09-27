@@ -12,7 +12,7 @@ export default function SearchPhoto() {
     const searchP = async (e) => {
         e.preventDefault();
         // console.log("submitting request")
-            unsplash.search
+        unsplash.search
             .photos(query)
             .then(toJson)
             .then((json) => {
@@ -38,8 +38,19 @@ export default function SearchPhoto() {
                 />
                 <button className="button" type="submit">Search</button>
             </form>
-            <div className="card-list">
-                {pics.map((pic) => pic.id)}
+            <div className="countainer">
+                <div className="card-list">
+                    {pics.map((pic) => <div className="card" key={pic.id}
+                    >
+                        <img
+                            src={pic.urls.full}
+                            alt={pic.alt_description}
+                            className="card-image"
+                            width="50%"
+                            height="50%"
+                        ></img>
+                    </div>)}
+                </div>
             </div>
         </div>
     )

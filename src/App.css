@@ -13,7 +13,7 @@
 .countainer {
     margin: 0 auto;
     max-width: 1000px;
-    padding: 40px;
+    padding: 5px;
 }
 
 .title {
@@ -52,4 +52,41 @@
 
 .button:hover {
     background-color: rgba(0,0,0,0.85);
+}
+
+/* Search styling */
+
+.card-list {
+    column-count:3 ;
+}
+
+.card {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.card-image {
+    flex: 180%;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+
+@media(min-width: 760px) {
+    .form {
+        grid-template-columns: auto 1fr auto;
+        grid-gap: 1rem;
+        align-items: center;
+    }
+
+    .input {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card-list {
+        column-count: -1;
+    }
 }
